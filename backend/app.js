@@ -9,9 +9,12 @@ const User = require("./api/models/user");
 require("dotenv").config();
 const Info = require("./api/models/info")
 const database = require("./config/database");
+const dotenv = require("dotenv");
 
 const logResponseBody = require("./utils/logResponse");
 
+
+dotenv.config(`${process.env.SECRET_KEY}`);
 
 var app = require("express")();
 var http = require("http").Server(app);

@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const MONGO_CONSTANTS = require("../constants/database");
 require("dotenv").config();
 
-const URL = MONGO_CONSTANTS.MONGO_URL;
+const URL = "mongodb://localhost:27017";
 
 (async () => {
   try {
@@ -13,6 +13,7 @@ const URL = MONGO_CONSTANTS.MONGO_URL;
       useUnifiedTopology: true,
     });
   } catch (e) {
+    console.log( MONGO_CONSTANTS.MONGO_URL);
     console.log("error occured: ", e.toString());
   }
 })();
